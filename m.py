@@ -1,4 +1,4 @@
-#aadiddoserpython
+aadiddoserpython
 
 import telebot
 import subprocess
@@ -216,8 +216,8 @@ def handle_aadi(message):
         # Check if the user is in admin_id (admins have no cooldown)
         if user_id not in admin_id:
             # Check if the user has run the command before and is still within the cooldown period
-            if user_id in aadi_cooldown and (datetime.datetime.now() - aadi_cooldown[user_id]).seconds < 30:
-                response = "ᴄᴏᴏʟᴅᴏᴡɴ ᴏɴ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ¼ ᴍɪɴᴜᴛᴇ ᴀɴᴅ ᴜsᴇ ᴀɢᴀɪɴ /aadi ᴄᴏᴍᴍᴀɴᴅ❗ "
+            if user_id in aadi_cooldown and (datetime.datetime.now() - aadi_cooldown[user_id]).seconds < 10:
+                response = "ᴄᴏᴏʟᴅᴏᴡɴ ᴏɴ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ¼ ᴍɪɴᴜᴛᴇ ᴀɴᴅ ᴜsᴇ ᴀɢᴀɪɴ /aadi ᴄᴏᴍᴍᴀɴᴅ❗\nhttps://t.me/user_x_dead "
                 bot.reply_to(message, response)
                 return
             # Update the last time the user ran the command
@@ -238,7 +238,7 @@ def handle_aadi(message):
                 subprocess.run(full_command, shell=True)
                 response = f"🚀ᴀᴛᴛᴀᴄᴋ ᴏɴ➡️ {target}:{port} \n💘ᴄᴏᴍᴘʟᴇᴛᴇ ✅ sᴜᴄᴄᴇssғᴜʟʟʏ🔊️\n https://t.me/user_x_dead"
         else:
-            response = "ᴜsᴀɢᴇ✅ :- /aadi <target> <port> <time> "  # Updated command syntax
+            response = "ᴜsᴀɢᴇ✅ :- /aadi <target> <port> <time>\nhttps://t.me/user_x_dead "  # Updated command syntax
 
 
     else:
@@ -333,6 +333,7 @@ def welcome_plan(message):
 /logs : ᴀʟʟ ᴜsᴇʀ ʟᴏɢs.
 /clearlogs : ᴄʟᴇᴀʀ ʟᴏɢ ғɪʟᴇ.
 /setexpire : sᴇᴛ ᴜsᴇʀ ᴛɪᴍᴇ
+https://t.me/user_x_dead
 '''
     bot.reply_to(message, response)
 
