@@ -1,0 +1,6 @@
+- pipeline: "Pipeline"
+  on: "CLICK"
+  refs:
+  - ":default"
+  fail_on_prepare_env_warning: true
+  resources: "X2LARGE"
