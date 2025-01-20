@@ -4,3 +4,11 @@
   - ":default"
   fail_on_prepare_env_warning: true
   resources: "X2LARGE"
+  actions:
+  - action: "Run aa/Pipeline"
+    type: "RUN_NEXT_PIPELINE"
+    wait: true
+    comment: "Triggered by $BUDDY_PIPELINE_NAME execution #$BUDDY_RUN_ID"
+    priority: "NORMAL"
+    next_project_name: "aa"
+    next_pipeline_name: "Pipeline"
