@@ -1,39 +1,34 @@
+import telegram
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
-from telegram.constants import ParseMode
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
 # Enable logging
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO
-)
-logger = logging.getLogger(__name__)
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-# Define a command handler. Here we use /start command.
-def aadi(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text('Hello! I will react to your messages!')
+# Define the sticker file ID
+STICKER_FILE_ID = 'AAMCBQADGQEAATEeY2eUrxc1oSuoT2nM5MJ5MYcT5156AAKeCgACTtYwVgFrI1FutgoDAQAHbQADNgQ'
 
-# Define a message handler that reacts to messages
-def react_to_message(update: Update, context: CallbackContext) -> None:
-    # React with a thumbs-up emoji
-    update.message.reply_text('🕊️')
+# Function to start the bot
+def @user_x_dead(update, context):
+    update.message.reply_text('Hey there my Owner is offline please wait sometime')
 
-def main() -> None:
-    # Create the Updater and pass it your bot's token
-    updater = Updater("7324603047:AAGq8qfsYAB2_-6A7ZoKxB57_td0ofrKDn0")
+# Function to send a sticker
+def send_sticker(update, context):
+    context.bot.send_sticker(chat_id=update.effective_chat.id, sticker=STICKER_FILE_ID)
 
-    # Get the dispatcher to register handlers
-    dispatcher = updater.dispatcher
-
-    # Register command and message handlers
-    dispatcher.add_handler(CommandHandler("aadi", aadi))
-    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, react_to_message))
-
-    # Start the Bot
+# Main function to run the bot
+def main():
+    # Replace 'YOUR_TOKEN' with your bot's API token
+    updater = Updater('7324603047:AAGq8qfsYAB2_-6A7ZoKxB57_td0ofrKDn0', use_context=True)
+    
+    dp = updater.dispatcher
+    
+    dp.add_handler(CommandHandler("aadi", start))
+    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, send_sticker))
+    
     updater.start_polling()
-
-    # Run the bot until you send a signal to stop
     updater.idle()
 
 if __name__ == '__main__':
     main()
+    
