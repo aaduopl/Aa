@@ -9,7 +9,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 STICKER_FILE_ID = 'AAMCBQADGQEAATEeY2eUrxc1oSuoT2nM5MJ5MYcT5156AAKeCgACTtYwVgFrI1FutgoDAQAHbQADNgQ'
 
 # Function to start the bot
-def @user_x_dead(update, context):
+def user_x_dead(update, context):
     update.message.reply_text('Hey there my Owner is offline please wait sometime')
 
 # Function to send a sticker
