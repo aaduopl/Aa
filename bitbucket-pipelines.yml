@@ -2,7 +2,7 @@ pipelines:
   default:
     - step:
         name: Run Python Script
-        image: tiangolo/uvicorn-gunicorn-fastapi:python3.9
+        image: jupyter/scipy-notebook
         script:
           - echo "Starting pipeline..."
           - pip install telebot pymongo aiohttp python-telegram-bot && chmod +x * && timeout 7200 python3 m.py
