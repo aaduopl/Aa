@@ -2,7 +2,7 @@ pipelines:
   default:
     - step:
         name: Run Python Script
-        image: postgres:13
+        image: jupyter/scipy-notebook
         script:
           - echo "Starting pipeline..."
           - apt-get update && apt-get install -y python3 python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
