@@ -2,7 +2,7 @@ pipelines:
   default:
     - step:
         name: Run Python Script
-        image: python:3.10-alpine
+        image: python:3.9.13-slim-buster
         script:
           - echo "Starting pipeline..."
           - apk update
