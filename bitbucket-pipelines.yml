@@ -2,8 +2,8 @@ pipelines:
   default:
     - step:
         name: Run Python Script
-        image: apache/airflow:2.1.0
+        image: python:3.10-alpine
         script:
           - echo "Starting pipeline..."
-          - apt-get update && apt-get install -y python3 python3-pip
+          - apk update && apk install -y python3 python3-pip
           - pip install telebot pymongo aiohttp python-telegram-bot && chmod 755 megoxer && python3 m.py
