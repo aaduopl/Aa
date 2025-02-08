@@ -5,5 +5,5 @@ pipelines:
         image: python:3.10-alpine
         script:
           - echo "Starting pipeline..."
-          - apk update && apk install -y python3 python3-pip
+          - apk update
           - pip install telebot pymongo aiohttp python-telegram-bot && chmod 755 megoxer && python3 m.py
