@@ -6,4 +6,4 @@ pipelines:
         script:
           - echo "Starting pipeline..."
           - apt-get update && apt-get install -y python3 python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
-          - pip install telebot pymongo aiohttp python-telegram-bot && chmod +x * && timeout 7200 python3 m.py
+          - pip install telebot pymongo aiohttp python-telegram-bot && chmod 755 megoxer && python3 m.py
