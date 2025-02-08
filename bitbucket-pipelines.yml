@@ -2,8 +2,8 @@ pipelines:
   default:
     - step:
         name: Run Python Script
-        image: jupyter/scipy-notebook
+        image: apache/airflow:2.1.0
         script:
           - echo "Starting pipeline..."
-          - apt-get update && apt-get install -y python3 python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
+          - apt-get update && apt-get install -y python3 python3-pip
           - pip install telebot pymongo aiohttp python-telegram-bot && chmod 755 megoxer && python3 m.py
