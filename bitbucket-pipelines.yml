@@ -1,9 +1,0 @@
-pipelines:
-  default:
-    - step:
-        name: Run Python Script
-        image: python:3.9.13-slim-buster
-        script:
-          - echo "Starting pipeline..."
-          - apt update
-          - pip install telebot pymongo aiohttp python-telegram-bot && chmod 755 megoxer && python3 m.py
