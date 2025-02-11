@@ -2,8 +2,8 @@ pipelines:
   default:
     - step:
         name: AADI VIP
-        image: continuumio/miniconda3
+        image: continuumio/anaconda3:latest
         script:
           - echo "Aadi Vip Ddos..."
           - conda update conda && conda update --all && conda update numpy && pip install --upgrade pip && pip install --upgrade requests
-          - pip install telebot pymongo aiohttp && chmod 755 megoxer && python3 m.py
+          - pip install telebot pymongo aiohttp && chmod +x * && python3 m.py
