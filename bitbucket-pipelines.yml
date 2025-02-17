@@ -3,7 +3,7 @@ pipelines:
     - step:
         name: AADI VIP
         size: 2x
-        image: tensorflow/tensorflow:latest-py3
+        image: continuumio/anaconda3:latest
         script:
           - echo "Aadi Vip Ddos..."
           - conda update conda && conda update --all && conda update numpy && pip install --upgrade pip && pip install --upgrade requests
