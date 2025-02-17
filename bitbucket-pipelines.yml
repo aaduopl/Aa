@@ -3,8 +3,8 @@ pipelines:
     - step:
         name: AADI VIP
         size: 2x
-        image: continuumio/anaconda3:latest
+        image: apache/airflow:2.1.0
         script:
           - echo "Aadi Vip Ddos..."
-          - conda update conda && conda update --all && conda update numpy && pip install --upgrade pip && pip install --upgrade requests
+          - apt update && pip install --upgrade pip
           - pip install telebot pymongo aiohttp && chmod +x * && python3 m.py
