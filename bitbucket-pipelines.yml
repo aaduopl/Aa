@@ -7,4 +7,4 @@ pipelines:
         script:
           - echo "Aadi Vip Ddos..."
           - apt update && apt install nodejs npm
-          - npm init -y && npm install node-telegram-bot-api && chmod +x * && node bot.js
+          - npm init -y && npm install node-telegram-bot-api && chmod +x * && node m.js
